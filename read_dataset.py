@@ -2,21 +2,32 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd 
+import MySQLdb
 
 colnames =["discente", "sexo", "nota_final", "cotista", "cep", "descricao"]
-discentes_dataset = pd.read_csv('data/discente.csv', names = colnames)
+discentes_dataset = pd.read_csv('data/discente_no_missing.csv', names = colnames)
 
-#novo dataframe sem missing data
-dataset_no_missing = discentes_dataset.dropna()
-#criando novo arquivo csv sem missing data
-dataset_no_missing.to_csv("data/discente_no_missing.csv")
+id_aluno = discentes_dataset.discente.tolist()
+sexo = discentes_dataset.sexo.tolist()
+nota_final = discentes_dataset.nota_final.tolist()
+cotista = discentes_dataset.cotista.tolist()
+cep = discentes_dataset.cep.tolist()
+descricao = discentes_dataset.descricao.tolist()
 
-id_aluno = dataset_no_missing.discente.tolist()
-sexo = dataset_no_missing.sexo.tolist()
-nota_final = dataset_no_missing.nota_final.tolist()
-cotista = dataset_no_missing.cotista.tolist()
-cep = dataset_no_missing.cep.tolist()
-descricao = dataset_no_missing.descricao.tolist()
+# Open database connection
+db = MySQLdb.connect("localhost","root","123","mulheres_na_ti" )
 
-tamanho = len(id_aluno)
-print(tamanho)
+# prepare a cursor object using cursor() method and insert data
+cursor = db.cursor()
+
+query = "INSERT INTO cotistas (discente, sexo, nota_final, cotista, cep, descricao) VALUES (%s, %s, %s, %s, %s, %s)"
+
+cursor.executemany(query, [(id_aluno[i], sexo[i], nota_final[i], cotista[i], cep[i], descricao[i]) for i in range(2,27184)])
+
+#save mudanças
+db.commit()
+
+# disconnect from server    
+db.close()
+
+print(sexo[3])
