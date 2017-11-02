@@ -13,3 +13,4 @@ cotista = discentes_dataset.cotista.tolist()
 cep = discentes_dataset.cep.tolist()
 descricao = discentes_dataset.descricao.tolist()
 
+tamanho = len(id_aluno)
