@@ -14,10 +14,10 @@ CREATE TABLE IF NOT EXISTS `mulheres_na_ti`.`cotistas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `discente` VARCHAR(50),
   `sexo` VARCHAR(1) NULL,
-  `nota_final` DOUBLE NULL,
-  `cotista` VARCHAR(1) NULL,
   `cep`VARCHAR(10) NULL,
-  `descricao`VARCHAR(20) NULL,
+  `cotista` VARCHAR(1) NULL,
+  `forma_ingresso` VARCHAR(100) NULL,
+  `nivel_ensino`VARCHAR(100) NULL,
 
    PRIMARY KEY (`id`))
 ENGINE = InnoDB;
