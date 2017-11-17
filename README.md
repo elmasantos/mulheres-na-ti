@@ -28,7 +28,7 @@ Após o préprocessamento, é gerado o arquivo final:
 
 * [Elma](https://github.com/elmasantos/)
 * Joicy
-* Julliana
+* [Julliana](https://github.com/JuhCrln)
 * Gabriel
 * [Thayrone](https://github.com/thaydds)
 
