@@ -24,7 +24,7 @@ cursor = db.cursor()
 
 query = "INSERT INTO cotistas (discente, sexo, cep, cotista, forma_ingresso, nivel_ensino) VALUES (%s, %s, %s, %s, %s, %s)"
 
-cursor.executemany(query, [(id_discente[i], sexo[i], cep[i], cotista[i], forma_ingresso[i], nivel_ensino[i]) for i in range(1,len(discentes_df))])
+cursor.executemany(query, [(id_discente[i], sexo[i], cep[i], cotista[i], forma_ingresso[i], nivel_ensino[i]) for i in range(0,len(discentes_df))])
 
 #save mudanças
 db.commit()
