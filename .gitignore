@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#trash
+data/.~lock.discentes_processed.csv#

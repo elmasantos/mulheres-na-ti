@@ -70,6 +70,7 @@ df_no_missing['cep'] = df_no_missing['cep'].str.replace('.', '')
 df_no_missing['cep'] = df_no_missing['cep'].str.replace(' ', '')
 
 #novo arquivo csv sem missing values, sem outliers e apenas graduação
+<<<<<<< HEAD
 #df_no_missing.to_csv("data/discentes_processed2.csv")'''
 '''print(matriculas20172_df.dtypes)
 
@@ -80,4 +81,4 @@ df_matriculas_no_missing = df_matriculas_no_missing[df_matriculas_no_missing.id_
 
 print(len(df_matriculas_no_missing))'''
 
-
+df_no_missing.to_csv("data/discentes_processed.csv")
