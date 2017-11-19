@@ -78,10 +78,10 @@ mat20161_no_missing = mat20161_no_missing.astype(str)
 mat20162_no_missing = mat20162_no_missing.astype(str)
 
 
-#df_no_missing.to_csv("data/processed/discentes_processed.csv")
-#mat20141_no_missing.to_csv("data/processed/matriculas_20141_processed.csv")
-'''mat20142_no_missing.to_csv("data/processed/matriculas_20142_processed.csv")
+df_no_missing.to_csv("data/processed/discentes_processed.csv")
+mat20141_no_missing.to_csv("data/processed/matriculas_20141_processed.csv")
+mat20142_no_missing.to_csv("data/processed/matriculas_20142_processed.csv")
 mat20151_no_missing.to_csv("data/processed/matriculas_20151_processed.csv")
 mat20152_no_missing.to_csv("data/processed/matriculas_20152_processed.csv")
 mat20161_no_missing.to_csv("data/processed/matriculas_20161_processed.csv")
-mat20162_no_missing.to_csv("data/processed/matriculas_20162_processed.csv")'''
+mat20162_no_missing.to_csv("data/processed/matriculas_20162_processed.csv")
