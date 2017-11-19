@@ -14,12 +14,6 @@ def select_data(dataframe, column_notnull, column_selected, name):
 
 	return df_no_missing
 
-#preenchimento de campos vazios
-def fill_nandata(dataframe, column, data):
-	values = {column : data}
-	dataframe.fillna(value=values, inplace=True)
-
-	return dataframe
 
 #limpando dataframe
 def matricula_drop_data(dataframe, column):
@@ -47,12 +41,11 @@ matriculas20162_df = pd.read_csv('data/matriculas-de-2016.2.csv', sep=';')
 
 #discentes dataset
 df_no_missing = select_data(discentes_df, 'id_discente', 'nivel_ensino', 'GRADUAÇÃO')
-df_no_missing = fill_nandata(df_no_missing, 'cep', '59000-000')
-df_no_missing = fill_nandata(df_no_missing, 'forma_ingresso', 'forma de ingresso')
-
+#preenchimento de campos vazios
+values = {'cep' : '59000000', 'forma_ingresso' : 'forma de ingresso'}
+df_no_missing.fillna(value=values, inplace=True)
 #preenchimento de campos de CEP com valor 59
 df_no_missing.replace('59', '59000-000', inplace=True)
-
 #retirando máscara de CEP, pontos e espaços
 df_no_missing['cep'] = df_no_missing['cep'].str.replace('-', '')
 df_no_missing['cep'] = df_no_missing['cep'].str.replace('.', '')
@@ -85,12 +78,10 @@ mat20161_no_missing = mat20161_no_missing.astype(str)
 mat20162_no_missing = mat20162_no_missing.astype(str)
 
 
-
-
-df_no_missing.to_csv("data/processed/discentes_processed.csv")
-mat20141_no_missing.to_csv("data/processed/matriculas_20141_processed.csv")
-mat20142_no_missing.to_csv("data/processed/matriculas_20142_processed.csv")
+#df_no_missing.to_csv("data/processed/discentes_processed.csv")
+#mat20141_no_missing.to_csv("data/processed/matriculas_20141_processed.csv")
+'''mat20142_no_missing.to_csv("data/processed/matriculas_20142_processed.csv")
 mat20151_no_missing.to_csv("data/processed/matriculas_20151_processed.csv")
 mat20152_no_missing.to_csv("data/processed/matriculas_20152_processed.csv")
 mat20161_no_missing.to_csv("data/processed/matriculas_20161_processed.csv")
-mat20162_no_missing.to_csv("data/processed/matriculas_20162_processed.csv")
+mat20162_no_missing.to_csv("data/processed/matriculas_20162_processed.csv")'''
