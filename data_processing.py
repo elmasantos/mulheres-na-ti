@@ -16,13 +16,17 @@ def select_data(dataframe, column_notnull, column_selected, name):
 
 
 #limpando dataframe
-def matricula_drop_data(dataframe, column):
+def mat_fill_and_drop_data(dataframe, column):
 	#excluindo coluna desnecessária	
 	dataframe.drop(column, axis=1, inplace=True)
 	#excluindo registros com descrição 'EXCLUIDA' ou 'CANCELADO'
 	dataframe = dataframe[dataframe.descricao != 'EXCLUIDA']
 	dataframe = dataframe[dataframe.descricao != 'CANCELADO']
 	dataframe = dataframe[dataframe.descricao != 'INDEFERIDO']
+	#preenchendo campos vazios
+	values = {'unidade' : '0', 'nota' : '0', 'reposicao' : '0', 'media_final' : '0', 
+	'numero_total_faltas' : '0'}
+	dataframe.fillna(value=values, inplace=True)
 	
 	return dataframe
 
@@ -61,12 +65,12 @@ mat20161_no_missing = select_data(matriculas20161_df, 'discente', 'id_curso', id
 mat20162_no_missing = select_data(matriculas20162_df, 'discente', 'id_curso', id_curso_ti)
 
 
-mat20141_no_missing = matricula_drop_data(mat20141_no_missing, 'faltas_unidade')
-mat20142_no_missing = matricula_drop_data(mat20142_no_missing, 'faltas_unidade')
-mat20151_no_missing = matricula_drop_data(mat20151_no_missing, ['faltas_unidade', 'Unnamed: 10'])
-mat20152_no_missing = matricula_drop_data(mat20152_no_missing, ['faltas_unidade', 'Unnamed: 10'])
-mat20161_no_missing = matricula_drop_data(mat20161_no_missing, ['faltas_unidade', 'Unnamed: 10'])
-mat20162_no_missing = matricula_drop_data(mat20162_no_missing, ['faltas_unidade', 'Unnamed: 10'])
+mat20141_no_missing = mat_fill_and_drop_data(mat20141_no_missing, 'faltas_unidade')
+mat20142_no_missing = mat_fill_and_drop_data(mat20142_no_missing, 'faltas_unidade')
+mat20151_no_missing = mat_fill_and_drop_data(mat20151_no_missing, ['faltas_unidade', 'Unnamed: 10'])
+mat20152_no_missing = mat_fill_and_drop_data(mat20152_no_missing, ['faltas_unidade', 'Unnamed: 10'])
+mat20161_no_missing = mat_fill_and_drop_data(mat20161_no_missing, ['faltas_unidade', 'Unnamed: 10'])
+mat20162_no_missing = mat_fill_and_drop_data(mat20162_no_missing, ['faltas_unidade', 'Unnamed: 10'])
 
 
 #convertendo dados em string

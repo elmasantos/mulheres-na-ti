@@ -21,3 +21,18 @@ CREATE TABLE IF NOT EXISTS `mulheres_na_ti`.`cotistas` (
 
    PRIMARY KEY (`id`))
 ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `mulheres_na_ti`.`matricula2016_1` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_turma` VARCHAR(50),
+  `discente` VARCHAR(50),
+  `id_curso` VARCHAR(50),
+  `unidade` VARCHAR(10) NULL,
+  `nota` VARCHAR(10) NULL,
+  `reposicao` VARCHAR(1) NULL,
+  `media_final` VARCHAR(100) NULL,
+  `numero_total_faltas` VARCHAR(100) NULL,
+  `descricao` VARCHAR(50),
+
+   PRIMARY KEY (`id`))
+ENGINE = InnoDB;
