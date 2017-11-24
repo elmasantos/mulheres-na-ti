@@ -7,7 +7,7 @@ import MySQLdb
 
 #leitura de arquivo
 #colnames =["id_discente", "sexo", "cep", "cotista", "forma_ingresso", "nivel_ensino"]
-discentes_df = pd.read_csv('data/discentes_processed.csv')
+discentes_df = pd.read_csv('data/processed/discentes_processed.csv')
 
 id_discente = discentes_df.id_discente.tolist()
 sexo = discentes_df.sexo.tolist()
