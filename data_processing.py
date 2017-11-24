@@ -72,6 +72,21 @@ mat20152_no_missing = mat_fill_and_drop_data(mat20152_no_missing, ['faltas_unida
 mat20161_no_missing = mat_fill_and_drop_data(mat20161_no_missing, ['faltas_unidade', 'Unnamed: 10'])
 mat20162_no_missing = mat_fill_and_drop_data(mat20162_no_missing, ['faltas_unidade', 'Unnamed: 10'])
 
+#convertendo notas para float
+mat20141_no_missing['nota'] = mat20141_no_missing['nota'].astype(float)
+mat20142_no_missing['nota'] = mat20142_no_missing['nota'].astype(float)
+mat20151_no_missing['nota'] = mat20151_no_missing['nota'].astype(float)
+mat20152_no_missing['nota'] = mat20152_no_missing['nota'].astype(float)
+mat20161_no_missing['nota'] = mat20161_no_missing['nota'].astype(float)
+mat20162_no_missing['nota'] = mat20162_no_missing['nota'].astype(float)
+
+#alterando notas para 2 casas decimais
+mat20141_no_missing = mat20141_no_missing.round({'nota' : 2})
+mat20142_no_missing = mat20142_no_missing.round({'nota' : 2})
+mat20151_no_missing = mat20151_no_missing.round({'nota' : 2})
+mat20152_no_missing = mat20152_no_missing.round({'nota' : 2})
+mat20161_no_missing = mat20161_no_missing.round({'nota' : 2})
+mat20162_no_missing = mat20162_no_missing.round({'nota' : 2})
 
 #convertendo dados em string
 mat20141_no_missing = mat20141_no_missing.astype(str)
