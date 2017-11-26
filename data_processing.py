@@ -73,9 +73,11 @@ else:
 
 	#discentes dataset
 	df_no_missing = select_data(discentes_df, 'id_discente', 'nivel_ensino', 'GRADUAÇÃO')
+	df_no_missing['bairro'] = df_no_missing['bairro'].str.replace('CANDEL&#65533;RIA', 'CANDELARIA')
 	#preenchimento de campos vazios
-	values = {'forma_ingresso' : 'forma de ingresso'}
-	df_no_missing.fillna(value=values, inplace=True)
+	#values = {'forma_ingresso' : 'forma de ingresso'}
+	#df_no_missing.fillna(value=values, inplace=True)
+
 	#preenchimento de campos de CEP com valor 59
 	'''df_no_missing.replace('59', '59000-000', inplace=True)
 	#retirando máscara de CEP, pontos e espaços
@@ -84,4 +86,4 @@ else:
 	df_no_missing['cep'] = df_no_missing['cep'].str.replace(' ', '')'''
 
 	
-	df_no_missing.to_csv("data/processed/dados_pessoais_discentes_processed.csv")
+	df_no_missing.to_csv("data/processed/dados_discentes_processed.csv")
