@@ -7,6 +7,7 @@ O projeto está sendo desenvolvido para a disciplina Tópicos Especiais em Infor
 #### Seleção dos dados
 
 O conjunto de dados escolhido contém informações sobre discentes de cursos de graduação da UFRN:
+- dados-pessoais-discentes.csv
 - data/discentes.csv
 - data/matricula-componente-20141.csv
 - data/matricula-componente-20142.csv
