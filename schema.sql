@@ -111,3 +111,23 @@ CREATE TABLE IF NOT EXISTS `mulheres_na_ti`.`matricula2014_2` (
 
    PRIMARY KEY (`id`))
 ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `mulheres_na_ti`.`discentes_da_instituicao` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_discente` VARCHAR(50),
+  `sexo` VARCHAR(1),
+  `data_nascimento` VARCHAR(50),
+  `raca` VARCHAR(50) NULL,
+  `estado_origem` VARCHAR(50) NULL,
+  `cidade_origem` VARCHAR(50) NULL,
+  `estado` VARCHAR(50) NULL,
+  `municipio` VARCHAR(50) NULL,
+  `bairro` VARCHAR(50),
+  `nivel_ensino` VARCHAR(50) NULL,
+  `forma_ingresso` VARCHAR(50) NULL,
+  `ano_ingresso` VARCHAR(4) NULL,
+  `periodo_ingresso` VARCHAR(1),
+  `cotista` VARCHAR(1),
+
+   PRIMARY KEY (`id`))
+ENGINE = InnoDB;
