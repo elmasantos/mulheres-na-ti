@@ -40,7 +40,6 @@ result1_df = select_data(discentes_df, 'sexo', 'municipio', 'descricao')
 result2_df = select_data(discentes_df, 'raca', 'bairro', 'descricao')
 result3_df = select_data(discentes_df, 'municipio', 'cotista', 'descricao')
 
-result1_df.to_csv("data/temp/sexo_mun_desc"+semestre+".csv")
-result2_df.to_csv("data/temp/raca_bairro_desc"+semestre+".csv")
-result3_df.to_csv("data/temp/mun_cot_desc"+semestre+".csv")
-
+result1_df.to_csv("data/temp/sexo_mun_desc"+semestre+".csv", sep=';')
+result2_df.to_csv("data/temp/raca_bairro_desc"+semestre+".csv", sep=';')
+result3_df.to_csv("data/temp/mun_cot_desc"+semestre+".csv", sep=';')
