@@ -1,0 +1,227 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     raca_bairro_desc20162-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    4369
+Attributes:   3
+              raca
+              bairro
+              descricao
+Test mode:    5-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+bairro = ALECRIM
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: REPROVADO (11.0/5.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO (22.0/13.0)
+bairro = AMARANTE: APROVADO (15.0/9.0)
+bairro = AREIA_BRANCA: APROVADO (12.0)
+bairro = AREIA_PRETA: APROVADO_POR_NOTA (16.0/7.0)
+bairro = BARREIROS: REPROVADO_POR_MEDIA_E_POR_FALTAS (14.0/3.0)
+bairro = BARRO_VERMELHO: APROVADO_POR_NOTA (29.0/12.0)
+bairro = BELA_VISTA: APROVADO_POR_NOTA (3.0)
+bairro = BOA_VIAGEM: DESISTENCIA (1.0)
+bairro = BOM_PASTOR: APROVADO_POR_NOTA (30.0/15.0)
+bairro = BOQUEIRAO: APROVADO (22.0)
+bairro = CAMPO: APROVADO_POR_NOTA (10.0)
+bairro = CANDELARIA
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO_POR_NOTA (32.0/17.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO (79.0/16.0)
+bairro = CAPIM_MACIO
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO_POR_NOTA (0.0)
+|   raca = BRANCO: REPROVADO (62.0/38.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (26.0/15.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (0.0)
+|   raca = PARDO: APROVADO_POR_NOTA (44.0/27.0)
+bairro = CENTRAL_PARQUE_II: REPROVADO (14.0/8.0)
+bairro = CENTRAL_PARQUE_III: REPROVADO (9.0/3.0)
+bairro = CENTRO: APROVADO_POR_NOTA (679.0/367.0)
+bairro = CIDADE_ALTA: APROVADO_POR_NOTA (14.0/6.0)
+bairro = CIDADE_DA_ESPERANCA
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (0.0)
+|   raca = NAO_INFORMADO: REPROVADO (30.0/18.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO (16.0/10.0)
+bairro = CIDADE_NOVA: APROVADO_POR_NOTA (29.0/12.0)
+bairro = COHAB: APROVADO (17.0/3.0)
+bairro = COHABINAL: APROVADO (12.0/6.0)
+bairro = CONJUNTO_AMARANTE: REPROVADO_POR_MEDIA_E_POR_FALTAS (12.0/3.0)
+bairro = CONJUNTO_IPE: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/6.0)
+bairro = DAS_FLORES: REPROVADO (15.0/3.0)
+bairro = DIX_SEPT_ROSADO: APROVADO (30.0/6.0)
+bairro = DOM_JOSE_ADELINO: APROVADO (12.0/3.0)
+bairro = EMAUS: APROVADO (274.0/130.0)
+bairro = FELIPE_CAMARAO: APROVADO_POR_NOTA (40.0/10.0)
+bairro = GOLANDIM
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (0.0)
+|   raca = NAO_INFORMADO: APROVADO (19.0/7.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: REPROVADO (17.0/11.0)
+bairro = GUARAPES: APROVADO (18.0)
+bairro = IGAPO: APROVADO_POR_NOTA (30.0/18.0)
+bairro = IPE: APROVADO_POR_NOTA (14.0/3.0)
+bairro = LAGOA_AZUL
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): REPROVADO (0.0)
+|   raca = BRANCO: APROVADO_POR_NOTA (26.0/18.0)
+|   raca = NAO_INFORMADO: REPROVADO (0.0)
+|   raca = NEGRO: REPROVADO (0.0)
+|   raca = PARDO: REPROVADO (46.0/25.0)
+bairro = LAGOA_DA_EMA: APROVADO (15.0/9.0)
+bairro = LAGOA_NOVA: APROVADO_POR_NOTA (332.0/206.0)
+bairro = LAGOA_SECA: APROVADO (45.0/15.0)
+bairro = LIBERDADE: APROVADO_POR_NOTA (8.0)
+bairro = MANGABEIRA: REPROVADO (12.0/3.0)
+bairro = MARACUJA: APROVADO_POR_NOTA (17.0/7.0)
+bairro = MOINHO: APROVADO_POR_NOTA (10.0/4.0)
+bairro = NACOES_UNIDAS: APROVADO (19.0/4.0)
+bairro = NAO_INFORMADO: APROVADO (149.0/71.0)
+bairro = NEOPOLIS
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO_POR_NOTA (0.0)
+|   raca = BRANCO: APROVADO (82.0/44.0)
+|   raca = NAO_INFORMADO: REPROVADO_POR_MEDIA_E_POR_FALTAS (37.0/22.0)
+|   raca = NEGRO: REPROVADO_POR_MEDIA_E_POR_FALTAS (14.0/5.0)
+|   raca = PARDO: REPROVADO_POR_MEDIA_E_POR_FALTAS (50.0/30.0)
+bairro = NOSSA_SENHORA_DA_APRESENTACAO
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (30.0/9.0)
+|   raca = NAO_INFORMADO: REPROVADO (23.0/14.0)
+|   raca = NEGRO: REPROVADO (10.0/4.0)
+|   raca = PARDO: APROVADO (60.0/25.0)
+bairro = NOSSA_SENHORA_DE_NAZARE
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO_POR_NOTA (20.0/11.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO (15.0/9.0)
+bairro = NOVA_CIDADE: APROVADO_POR_NOTA (10.0)
+bairro = NOVA_DESCOBERTA: APROVADO_POR_NOTA (20.0/7.0)
+bairro = NOVA_ESPERANCA
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO_POR_NOTA (0.0)
+|   raca = BRANCO: APROVADO_POR_NOTA (36.0/12.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (0.0)
+|   raca = NEGRO: APROVADO (18.0/9.0)
+|   raca = PARDO: REPROVADO_POR_MEDIA_E_POR_FALTAS (7.0/4.0)
+bairro = NOVA_PARNAMIRIM
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (220.0/131.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (5.0/1.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (17.0/8.0)
+|   raca = PARDO: APROVADO (150.0/81.0)
+bairro = NOVO_AMARANTE: REPROVADO_POR_MEDIA_E_POR_FALTAS (12.0)
+bairro = NOVO_HORIZONTE: REPROVADO_POR_MEDIA_E_POR_FALTAS (6.0)
+bairro = PAJUCARA
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (51.0/24.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (13.0/2.0)
+|   raca = PARDO: APROVADO (83.0/31.0)
+bairro = PARAIZO: APROVADO (21.0/15.0)
+bairro = PARQUE_DAS_NACOES: REPROVADO (8.0/2.0)
+bairro = PARQUE_DE_EXPOSICOES: APROVADO_POR_NOTA (31.0/12.0)
+bairro = PARQUE_DOURADO: APROVADO_POR_NOTA (46.0/28.0)
+bairro = PASSAGEM_DE_AREIA
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO_POR_NOTA (0.0)
+|   raca = BRANCO: APROVADO_POR_NOTA (0.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (12.0/3.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (0.0)
+|   raca = PARDO: APROVADO (37.0/19.0)
+bairro = PITIMBU: APROVADO_POR_NOTA (33.0/7.0)
+bairro = PLANALTO
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: REPROVADO_POR_MEDIA_E_POR_FALTAS (10.0/4.0)
+|   raca = NAO_INFORMADO: REPROVADO (10.0/4.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO (47.0/18.0)
+bairro = PONTA_NEGRA
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO_POR_NOTA (0.0)
+|   raca = BRANCO: REPROVADO_POR_MEDIA_E_POR_FALTAS (55.0/37.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (12.0/6.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (0.0)
+|   raca = PARDO: APROVADO_POR_NOTA (103.0/61.0)
+bairro = POTENGI
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (27.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (24.0/12.0)
+|   raca = PARDO: APROVADO (91.0/55.0)
+bairro = QUINTAS: APROVADO (28.0/10.0)
+bairro = REDINHA: APROVADO (49.0/24.0)
+bairro = ROSA_DOS_VENTOS: DESISTENCIA (1.0)
+bairro = SANTA_LUCIA: APROVADO_POR_NOTA (17.0/5.0)
+bairro = SANTA_RITA: APROVADO (20.0/8.0)
+bairro = SAO_DOMINGOS: APROVADO (11.0/3.0)
+bairro = SAO_GONCALO: APROVADO_POR_NOTA (19.0/6.0)
+bairro = SAO_JOSE: APROVADO (19.0/7.0)
+bairro = SAO_SEBASTIAO: APROVADO (17.0/2.0)
+bairro = SITIO_PAU_QUEIMADO: APROVADO_POR_NOTA (15.0/9.0)
+bairro = TIROL
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): REPROVADO (0.0)
+|   raca = BRANCO: DESISTENCIA (23.0/16.0)
+|   raca = NAO_INFORMADO: APROVADO (28.0/11.0)
+|   raca = NEGRO: REPROVADO (0.0)
+|   raca = PARDO: APROVADO_POR_NOTA (21.0/9.0)
+bairro = VALE_DO_SOL
+|   raca = AMARELO_(DE_ORIGEM_ORIENTAL): APROVADO (0.0)
+|   raca = BRANCO: APROVADO (0.0)
+|   raca = NAO_INFORMADO: APROVADO (18.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: REPROVADO (18.0/9.0)
+bairro = VIDA_NOVA: APROVADO_POR_NOTA (4.0/2.0)
+bairro = VILA_JARAGUA: APROVADO (18.0)
+bairro = VILA_NOVA: APROVADO (12.0/3.0)
+bairro = VILA_SANTA_LUCIA: APROVADO_POR_NOTA (21.0/9.0)
+bairro = ZONA_RURAL: APROVADO (31.0/18.0)
+
+Number of Leaves  : 	150
+
+Size of the tree : 	169
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2159               49.4163 %
+Incorrectly Classified Instances      2210               50.5837 %
+Kappa statistic                          0.2343
+Mean absolute error                      0.1717
+Root mean squared error                  0.2975
+Relative absolute error                 85.9709 %
+Root relative squared error             94.1623 %
+Total Number of Instances             4369     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,620    0,337    0,538      0,620    0,576      0,277    0,716     0,625     APROVADO
+                 0,572    0,358    0,466      0,572    0,514      0,206    0,666     0,517     APROVADO_POR_NOTA
+                 0,108    0,004    0,304      0,108    0,159      0,174    0,703     0,071     DESISTENCIA
+                 0,178    0,044    0,395      0,178    0,245      0,192    0,698     0,285     REPROVADO
+                 0,326    0,029    0,489      0,326    0,391      0,359    0,839     0,398     REPROVADO_POR_MEDIA_E_POR_FALTAS
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,927     0,059     REPROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,778     0,107     TRANCADO
+Weighted Avg.    0,494    0,266    0,470      0,494    0,472      0,237    0,708     0,499     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f    g   <-- classified as
+ 1050  553    0   69   21    0    0 |    a = APROVADO
+  538  884    3   63   58    0    0 |    b = APROVADO_POR_NOTA
+   20   33    7    4    1    0    0 |    c = DESISTENCIA
+  207  251    6  107   30    0    0 |    d = REPROVADO
+   77  128    6   19  111    0    0 |    e = REPROVADO_POR_MEDIA_E_POR_FALTAS
+   10    8    0    3    3    0    0 |    f = REPROVADO_POR_NOTA
+   51   38    1    6    3    0    0 |    g = TRANCADO
+

@@ -1,0 +1,84 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     sexo_mun_desc20142-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1694
+Attributes:   3
+              sexo
+              municipio
+              descricao
+Test mode:    5-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+municipio = CARAPICUIBA: APROVADO (30.0/18.0)
+municipio = CEARA_MIRIM: APROVADO_POR_NOTA (21.0/10.0)
+municipio = CURRAIS_NOVOS: APROVADO (36.0/24.0)
+municipio = DOUTOR_SEVERIANO: APROVADO_POR_NOTA (18.0/3.0)
+municipio = EXTREMOZ: APROVADO_POR_NOTA (13.0/4.0)
+municipio = MACAIBA: APROVADO_POR_NOTA (21.0/12.0)
+municipio = NAO_INFORMADO: APROVADO_POR_NOTA (38.0/26.0)
+municipio = NATAL: APROVADO_POR_NOTA (952.0/631.0)
+municipio = NOVA_CRUZ: APROVADO_POR_NOTA (34.0/19.0)
+municipio = OURO_BRANCO: APROVADO (18.0/12.0)
+municipio = PARNAMIRIM: APROVADO_POR_NOTA (301.0/142.0)
+municipio = PEDRO_VELHO: APROVADO_POR_NOTA (14.0/5.0)
+municipio = RIACHUELO: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/9.0)
+municipio = SANTA_CRUZ: REPROVADO_POR_MEDIA_E_POR_FALTAS (18.0)
+municipio = SANTO_ANTONIO: APROVADO (37.0/17.0)
+municipio = SAO_BENTO_DO_NORTE: APROVADO (18.0/3.0)
+municipio = SAO_GONCALO_DO_AMARANTE: APROVADO (27.0/6.0)
+municipio = SAO_JOSE_DE_MIPIBU: REPROVADO (19.0/7.0)
+municipio = SAO_PAULO: APROVADO (15.0)
+municipio = SAO_PAULO_DO_POTENGI: APROVADO (27.0/18.0)
+municipio = TANGARA: APROVADO_POR_NOTA (22.0/13.0)
+
+Number of Leaves  : 	21
+
+Size of the tree : 	22
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         683               40.3188 %
+Incorrectly Classified Instances      1011               59.6812 %
+Kappa statistic                          0.0979
+Mean absolute error                      0.1518
+Root mean squared error                  0.2775
+Relative absolute error                 91.9335 %
+Root relative squared error             96.6293 %
+Total Number of Instances             1694     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,192    0,074    0,516      0,192    0,280      0,172    0,619     0,430     APROVADO
+                 0,892    0,793    0,388      0,892    0,541      0,126    0,601     0,455     APROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,527     0,028     DESISTENCIA
+                 0,047    0,013    0,387      0,047    0,084      0,090    0,639     0,234     REPROVADO
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,878     0,008     REPROVADO_POR_FALTAS
+                 0,120    0,022    0,458      0,120    0,190      0,182    0,687     0,302     REPROVADO_POR_MEDIA_E_POR_FALTAS
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,748     0,033     REPROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,990     0,087     REPROVADO_POR_NOTA_E_FALTA
+                 0,058    0,007    0,250      0,058    0,094      0,103    0,720     0,135     TRANCADO
+Weighted Avg.    0,403    0,313    0,420      0,403    0,319      0,138    0,629     0,371     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   <-- classified as
+  95 386   0   2   0  12   0   0   0 |   a = APROVADO
+  31 545   0  16   0  12   0   0   7 |   b = APROVADO_POR_NOTA
+   0  25   0   1   0   0   0   0   0 |   c = DESISTENCIA
+  29 214   0  12   0   1   0   0   0 |   d = REPROVADO
+   0   3   0   0   0   0   0   0   0 |   e = REPROVADO_POR_FALTAS
+  24 169   0   0   0  27   0   0   5 |   f = REPROVADO_POR_MEDIA_E_POR_FALTAS
+   0   4   0   0   0   2   0   0   0 |   g = REPROVADO_POR_NOTA
+   3   0   0   0   0   0   0   0   0 |   h = REPROVADO_POR_NOTA_E_FALTA
+   2  58   0   0   0   5   0   0   4 |   i = TRANCADO
+

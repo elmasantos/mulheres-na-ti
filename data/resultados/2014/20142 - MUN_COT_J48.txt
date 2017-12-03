@@ -1,0 +1,88 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     mun_cot_desc20142-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1694
+Attributes:   3
+              municipio
+              cotista
+              descricao
+Test mode:    5-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+municipio = CARAPICUIBA: APROVADO (30.0/18.0)
+municipio = CEARA_MIRIM: APROVADO_POR_NOTA (21.0/10.0)
+municipio = CURRAIS_NOVOS: APROVADO (36.0/24.0)
+municipio = DOUTOR_SEVERIANO: APROVADO_POR_NOTA (18.0/3.0)
+municipio = EXTREMOZ: APROVADO_POR_NOTA (13.0/4.0)
+municipio = MACAIBA: APROVADO_POR_NOTA (21.0/12.0)
+municipio = NAO_INFORMADO
+|   cotista = F: APROVADO_POR_NOTA (29.0/17.0)
+|   cotista = T: APROVADO (9.0/3.0)
+municipio = NATAL: APROVADO_POR_NOTA (952.0/631.0)
+municipio = NOVA_CRUZ: APROVADO_POR_NOTA (34.0/19.0)
+municipio = OURO_BRANCO: APROVADO (18.0/12.0)
+municipio = PARNAMIRIM: APROVADO_POR_NOTA (301.0/142.0)
+municipio = PEDRO_VELHO: APROVADO_POR_NOTA (14.0/5.0)
+municipio = RIACHUELO: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/9.0)
+municipio = SANTA_CRUZ: REPROVADO_POR_MEDIA_E_POR_FALTAS (18.0)
+municipio = SANTO_ANTONIO: APROVADO (37.0/17.0)
+municipio = SAO_BENTO_DO_NORTE: APROVADO (18.0/3.0)
+municipio = SAO_GONCALO_DO_AMARANTE: APROVADO (27.0/6.0)
+municipio = SAO_JOSE_DE_MIPIBU: REPROVADO (19.0/7.0)
+municipio = SAO_PAULO: APROVADO (15.0)
+municipio = SAO_PAULO_DO_POTENGI
+|   cotista = F: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/6.0)
+|   cotista = T: APROVADO (12.0/6.0)
+municipio = TANGARA: APROVADO_POR_NOTA (22.0/13.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	26
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         678               40.0236 %
+Incorrectly Classified Instances      1016               59.9764 %
+Kappa statistic                          0.1067
+Mean absolute error                      0.1509
+Root mean squared error                  0.277 
+Relative absolute error                 91.3555 %
+Root relative squared error             96.4545 %
+Total Number of Instances             1694     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,372    0,232    0,398      0,372    0,385      0,143    0,633     0,443     APROVADO
+                 0,733    0,635    0,394      0,733    0,513      0,100    0,618     0,465     APROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,551     0,030     DESISTENCIA
+                 0,047    0,013    0,387      0,047    0,084      0,090    0,652     0,240     REPROVADO
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,874     0,009     REPROVADO_POR_FALTAS
+                 0,133    0,013    0,612      0,133    0,219      0,244    0,709     0,331     REPROVADO_POR_MEDIA_E_POR_FALTAS
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,776     0,043     REPROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,996     0,178     REPROVADO_POR_NOTA_E_FALTA
+                 0,058    0,007    0,250      0,058    0,094      0,103    0,724     0,143     TRANCADO
+Weighted Avg.    0,400    0,301    0,409      0,400    0,343      0,128    0,645     0,384     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   <-- classified as
+ 184 303   0   2   0   6   0   0   0 |   a = APROVADO
+ 134 448   0  16   0   6   0   0   7 |   b = APROVADO_POR_NOTA
+   4  21   0   1   0   0   0   0   0 |   c = DESISTENCIA
+  62 182   0  12   0   0   0   0   0 |   d = REPROVADO
+   0   3   0   0   0   0   0   0   0 |   e = REPROVADO_POR_FALTAS
+  58 132   0   0   0  30   0   0   5 |   f = REPROVADO_POR_MEDIA_E_POR_FALTAS
+   1   5   0   0   0   0   0   0   0 |   g = REPROVADO_POR_NOTA
+   0   0   0   0   0   3   0   0   0 |   h = REPROVADO_POR_NOTA_E_FALTA
+  19  42   0   0   0   4   0   0   4 |   i = TRANCADO
+

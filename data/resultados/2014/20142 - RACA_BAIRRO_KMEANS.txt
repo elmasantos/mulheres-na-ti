@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     raca_bairro_desc20142-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1694
+Attributes:   3
+              raca
+              bairro
+              descricao
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 1967.0
+
+Initial starting points (random):
+
+Cluster 0: PARDO,POTENGI,TRANCADO
+Cluster 1: BRANCO,EMAUS,REPROVADO
+Cluster 2: BRANCO,EMAUS,REPROVADO_POR_FALTAS
+Cluster 3: BRANCO,NOVA_PARNAMIRIM,APROVADO
+Cluster 4: PARDO,CAPIM_MACIO,APROVADO_POR_NOTA
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                               Cluster#
+Attribute                                   Full Data                 0                 1                 2                 3                 4
+                                             (1694.0)           (667.0)           (434.0)           (111.0)           (183.0)           (299.0)
+===============================================================================================================================================
+raca                                            PARDO             PARDO            BRANCO            BRANCO            BRANCO             PARDO
+bairro                                         CENTRO        CANDELARIA            CENTRO             EMAUS       CAPIM_MACIO       CAPIM_MACIO
+descricao                           APROVADO_POR_NOTA          APROVADO APROVADO_POR_NOTA         REPROVADO          APROVADO APROVADO_POR_NOTA
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       667 ( 39%)
+1       434 ( 26%)
+2       111 (  7%)
+3       183 ( 11%)
+4       299 ( 18%)
+

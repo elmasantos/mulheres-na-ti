@@ -1,0 +1,133 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     raca_bairro_desc20142-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1694
+Attributes:   3
+              raca
+              bairro
+              descricao
+Test mode:    5-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+bairro = ALECRIM: APROVADO_POR_NOTA (15.0/6.0)
+bairro = ALFREDO_MESQUITA: APROVADO_POR_NOTA (21.0/12.0)
+bairro = ASSUNCAO: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/6.0)
+bairro = BARRO_VERMELHO: APROVADO (36.0/15.0)
+bairro = BOA_ESPERANCA: APROVADO_POR_NOTA (12.0)
+bairro = CANDELARIA: APROVADO (110.0/71.0)
+bairro = CAPIM_MACIO
+|   raca = BRANCO: APROVADO (83.0/38.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO_POR_NOTA (38.0/20.0)
+bairro = CENTRO
+|   raca = BRANCO: APROVADO_POR_NOTA (77.0/41.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (0.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (21.0/10.0)
+|   raca = PARDO: APROVADO (84.0/46.0)
+bairro = CIDADE_NOVA: APROVADO_POR_NOTA (25.0/16.0)
+bairro = COHABINAL: APROVADO_POR_NOTA (15.0/9.0)
+bairro = CONJUNTO_AMARANTE: APROVADO (27.0/6.0)
+bairro = DIX_SEPT_ROSADO: APROVADO_POR_NOTA (15.0/6.0)
+bairro = EMAUS: REPROVADO (70.0/43.0)
+bairro = FELIPE_CAMARAO: REPROVADO_POR_MEDIA_E_POR_FALTAS (19.0/7.0)
+bairro = IGAPO
+|   raca = BRANCO: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/3.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (0.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (12.0/3.0)
+|   raca = PARDO: APROVADO_POR_NOTA (21.0/15.0)
+bairro = LAGOA_AZUL: REPROVADO (12.0/3.0)
+bairro = LAGOA_NOVA
+|   raca = BRANCO: APROVADO (18.0/6.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/6.0)
+bairro = LOTEAMENTO_VILA_NOVA: APROVADO_POR_NOTA (14.0/5.0)
+bairro = MIGUEL_PEREIRA_MAIA: REPROVADO_POR_MEDIA_E_POR_FALTAS (18.0)
+bairro = NAO_INFORMADO
+|   raca = BRANCO: REPROVADO_POR_MEDIA_E_POR_FALTAS (21.0/12.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (0.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (0.0)
+|   raca = PARDO: APROVADO_POR_NOTA (17.0/11.0)
+bairro = NEOPOLIS: APROVADO_POR_NOTA (84.0/42.0)
+bairro = NOSSA_SENHORA_DA_APRESENTACAO
+|   raca = BRANCO: APROVADO_POR_NOTA (15.0/6.0)
+|   raca = NAO_INFORMADO: APROVADO_POR_NOTA (18.0/9.0)
+|   raca = NEGRO: APROVADO_POR_NOTA (0.0)
+|   raca = PARDO: APROVADO (45.0/21.0)
+bairro = NOVA_DESCOBERTA: APROVADO_POR_NOTA (18.0/9.0)
+bairro = NOVA_PARNAMIRIM: APROVADO_POR_NOTA (125.0/47.0)
+bairro = PAJUCARA: APROVADO_POR_NOTA (69.0/39.0)
+bairro = PARQUE_DAS_NACOES: APROVADO_POR_NOTA (18.0/3.0)
+bairro = PARQUE_DE_EXPOSICOES: APROVADO_POR_NOTA (9.0/3.0)
+bairro = PARQUE_DOURADO: APROVADO (36.0/24.0)
+bairro = PASSAGEM_DE_AREIA: APROVADO_POR_NOTA (37.0/16.0)
+bairro = PITIMBU: APROVADO (64.0/31.0)
+bairro = PLANALTO: APROVADO_POR_NOTA (11.0/5.0)
+bairro = PONTA_NEGRA
+|   raca = BRANCO: APROVADO (41.0/20.0)
+|   raca = NAO_INFORMADO: APROVADO (0.0)
+|   raca = NEGRO: APROVADO (0.0)
+|   raca = PARDO: APROVADO_POR_NOTA (16.0/10.0)
+bairro = POTENGI: REPROVADO_POR_MEDIA_E_POR_FALTAS (89.0/62.0)
+bairro = QUINTAS: APROVADO_POR_NOTA (15.0/6.0)
+bairro = REDINHA: APROVADO (21.0/9.0)
+bairro = SANTA_RITA: APROVADO_POR_NOTA (13.0/4.0)
+bairro = SANTOS_DUMONT: APROVADO (12.0/6.0)
+bairro = SANTOS_REIS: APROVADO_POR_NOTA (12.0/6.0)
+bairro = VIDA_NOVA: APROVADO (15.0/6.0)
+bairro = VILA_JARAGUA: APROVADO (15.0)
+bairro = VILA_SANTA_LUCIA: APROVADO (30.0/18.0)
+bairro = ZONA_RURAL: APROVADO_POR_NOTA (20.0/8.0)
+
+Number of Leaves  : 	63
+
+Size of the tree : 	71
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         799               47.1665 %
+Incorrectly Classified Instances       895               52.8335 %
+Kappa statistic                          0.2524
+Mean absolute error                      0.139 
+Root mean squared error                  0.2687
+Relative absolute error                 84.1612 %
+Root relative squared error             93.5595 %
+Total Number of Instances             1694     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,618    0,283    0,474      0,618    0,537      0,314    0,737     0,514     APROVADO
+                 0,591    0,347    0,490      0,591    0,536      0,236    0,685     0,528     APROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,688     0,061     DESISTENCIA
+                 0,133    0,044    0,351      0,133    0,193      0,137    0,743     0,304     REPROVADO
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,975     0,038     REPROVADO_POR_FALTAS
+                 0,427    0,076    0,464      0,427    0,444      0,364    0,836     0,491     REPROVADO_POR_MEDIA_E_POR_FALTAS
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,976     0,108     REPROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,996     0,178     REPROVADO_POR_NOTA_E_FALTA
+                 0,029    0,004    0,250      0,029    0,052      0,073    0,844     0,182     TRANCADO
+Weighted Avg.    0,472    0,225    0,440      0,472    0,440      0,249    0,738     0,461     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   <-- classified as
+ 306 147   0   8   0  34   0   0   0 |   a = APROVADO
+ 161 361   0  42   0  42   0   0   5 |   b = APROVADO_POR_NOTA
+  10  15   0   1   0   0   0   0   0 |   c = DESISTENCIA
+  79 130   0  34   0  13   0   0   0 |   d = REPROVADO
+   0   1   0   2   0   0   0   0   0 |   e = REPROVADO_POR_FALTAS
+  60  60   0   8   0  96   0   0   1 |   f = REPROVADO_POR_MEDIA_E_POR_FALTAS
+   1   4   0   0   0   1   0   0   0 |   g = REPROVADO_POR_NOTA
+   0   0   0   0   0   3   0   0   0 |   h = REPROVADO_POR_NOTA_E_FALTA
+  28  19   0   2   0  18   0   0   2 |   i = TRANCADO
+

@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     mun_cot_desc20162-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    4369
+Attributes:   3
+              municipio
+              cotista
+              descricao
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 3350.0
+
+Initial starting points (random):
+
+Cluster 0: NATAL,F,DESISTENCIA
+Cluster 1: SANTA_CRUZ,T,APROVADO_POR_NOTA
+Cluster 2: NATAL,F,APROVADO
+Cluster 3: PARNAMIRIM,F,APROVADO_POR_NOTA
+Cluster 4: PARNAMIRIM,F,APROVADO
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                               Cluster#
+Attribute                                   Full Data                 0                 1                 2                 3                 4
+                                             (4369.0)          (1219.0)          (1750.0)           (744.0)           (286.0)           (370.0)
+===============================================================================================================================================
+municipio                                       NATAL             NATAL             NATAL             NATAL        PARNAMIRIM        PARNAMIRIM
+cotista                                             F                 F                 T                 F                 F                 F
+descricao                                    APROVADO APROVADO_POR_NOTA APROVADO_POR_NOTA          APROVADO APROVADO_POR_NOTA          APROVADO
+
+
+
+
+Time taken to build model (full training data) : 0.02 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      1219 ( 28%)
+1      1750 ( 40%)
+2       744 ( 17%)
+3       286 (  7%)
+4       370 (  8%)
+

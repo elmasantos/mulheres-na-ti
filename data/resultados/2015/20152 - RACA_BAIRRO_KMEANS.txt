@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     raca_bairro_desc20152-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    3120
+Attributes:   3
+              raca
+              bairro
+              descricao
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 4547.0
+
+Initial starting points (random):
+
+Cluster 0: PARDO,PITIMBU,REPROVADO
+Cluster 1: BRANCO,CANDELARIA,APROVADO_POR_NOTA
+Cluster 2: BRANCO,LAGOA_NOVA,REPROVADO
+Cluster 3: BRANCO,NAO_INFORMADO,APROVADO_POR_NOTA
+Cluster 4: PARDO,NAO_INFORMADO,REPROVADO
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                               Cluster#
+Attribute                                   Full Data                 0                 1                 2                 3                 4
+                                             (3120.0)          (2125.0)           (646.0)           (264.0)            (41.0)            (44.0)
+===============================================================================================================================================
+raca                                            PARDO             PARDO            BRANCO            BRANCO            BRANCO             PARDO
+bairro                                         CENTRO            CENTRO            CENTRO        LAGOA_NOVA     NAO_INFORMADO     NAO_INFORMADO
+descricao                                    APROVADO          APROVADO APROVADO_POR_NOTA         REPROVADO APROVADO_POR_NOTA          APROVADO
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      2125 ( 68%)
+1       646 ( 21%)
+2       264 (  8%)
+3        41 (  1%)
+4        44 (  1%)
+

@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     mun_cot_desc20141-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    2028
+Attributes:   3
+              municipio
+              cotista
+              descricao
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 1666.0
+
+Initial starting points (random):
+
+Cluster 0: NATAL,T,APROVADO
+Cluster 1: NATAL,T,APROVADO_POR_NOTA
+Cluster 2: NATAL,T,REPROVADO_POR_MEDIA_E_POR_FALTAS
+Cluster 3: NATAL,T,DESISTENCIA
+Cluster 4: PEDRO_VELHO,F,APROVADO
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                                                             Cluster#
+Attribute                                                  Full Data                                0                                1                                2                                3                                4
+                                                            (2028.0)                         (1058.0)                          (571.0)                          (125.0)                           (70.0)                          (204.0)
+=========================================================================================================================================================================================================================================
+municipio                                                      NATAL                            NATAL                            NATAL                            NATAL                            NATAL                       PARNAMIRIM
+cotista                                                            F                                F                                F                                F                                F                                F
+descricao                                                   APROVADO                         APROVADO                APROVADO_POR_NOTA REPROVADO_POR_MEDIA_E_POR_FALTAS                      DESISTENCIA                         APROVADO
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      1058 ( 52%)
+1       571 ( 28%)
+2       125 (  6%)
+3        70 (  3%)
+4       204 ( 10%)
+

@@ -1,0 +1,106 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     mun_cot_desc20152-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    3120
+Attributes:   3
+              municipio
+              cotista
+              descricao
+Test mode:    5-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+municipio = ACARI: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/6.0)
+municipio = AGUA_NOVA: REPROVADO (24.0/9.0)
+municipio = AREZ: APROVADO_POR_NOTA (22.0/10.0)
+municipio = ASSU: APROVADO (10.0/2.0)
+municipio = BREJINHO: REPROVADO (15.0/3.0)
+municipio = CANGUARETAMA: REPROVADO (18.0/9.0)
+municipio = CARAPICUIBA: APROVADO (15.0/9.0)
+municipio = CEARA_MIRIM: APROVADO_POR_NOTA (65.0/28.0)
+municipio = CURRAIS_NOVOS
+|   cotista = F: APROVADO (36.0/18.0)
+|   cotista = T: REPROVADO_POR_MEDIA_E_POR_FALTAS (6.0)
+municipio = DOUTOR_SEVERIANO: APROVADO_POR_NOTA (21.0/12.0)
+municipio = EXTREMOZ: APROVADO_POR_NOTA (45.0/17.0)
+municipio = GOIANINHA
+|   cotista = F: APROVADO (18.0/9.0)
+|   cotista = T: REPROVADO (10.0/4.0)
+municipio = JOAO_CAMARA: APROVADO (42.0/18.0)
+municipio = LAGOA_DANTA: APROVADO (12.0/2.0)
+municipio = LIMOEIRO_DO_NORTE: APROVADO (19.0/7.0)
+municipio = MACAIBA: APROVADO_POR_NOTA (30.0/14.0)
+municipio = MACAU: APROVADO_POR_NOTA (12.0)
+municipio = MONTE_ALEGRE
+|   cotista = F: APROVADO (12.0/6.0)
+|   cotista = T: REPROVADO (18.0/6.0)
+municipio = NAO_INFORMADO
+|   cotista = F: APROVADO (30.0/14.0)
+|   cotista = T: REPROVADO_POR_MEDIA_E_POR_FALTAS (15.0/6.0)
+municipio = NATAL
+|   cotista = F: APROVADO (1290.0/737.0)
+|   cotista = T: APROVADO_POR_NOTA (464.0/291.0)
+municipio = NOVA_CRUZ: APROVADO_POR_NOTA (17.0/5.0)
+municipio = OURO_BRANCO: APROVADO (21.0/12.0)
+municipio = PARNAMIRIM: APROVADO (533.0/343.0)
+municipio = PAU_DOS_FERROS: APROVADO (18.0/6.0)
+municipio = PEDRO_VELHO: REPROVADO (22.0/13.0)
+municipio = RECIFE: APROVADO_POR_NOTA (15.0/5.0)
+municipio = SANTA_CRUZ: APROVADO (18.0/8.0)
+municipio = SANTO_ANTONIO: REPROVADO (12.0/3.0)
+municipio = SAO_BENTO_DO_NORTE: APROVADO_POR_NOTA (18.0/6.0)
+municipio = SAO_GONCALO_DO_AMARANTE: APROVADO (71.0/32.0)
+municipio = SAO_PAULO: APROVADO (15.0/3.0)
+municipio = SAO_PAULO_DO_POTENGI
+|   cotista = F: REPROVADO_POR_MEDIA_E_POR_FALTAS (19.0/7.0)
+|   cotista = T: TRANCADO (10.0)
+municipio = SAO_TOME: APROVADO (51.0/9.0)
+municipio = SERRA_NEGRA_DO_NORTE: TRANCADO (1.0)
+municipio = TANGARA: APROVADO_POR_NOTA (15.0/3.0)
+
+Number of Leaves  : 	41
+
+Size of the tree : 	48
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1399               44.8397 %
+Incorrectly Classified Instances      1721               55.1603 %
+Kappa statistic                          0.1472
+Mean absolute error                      0.1895
+Root mean squared error                  0.3101
+Relative absolute error                 92.7918 %
+Root relative squared error             97.0629 %
+Total Number of Instances             3120     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,794    0,632    0,439      0,794    0,565      0,171    0,625     0,495     APROVADO
+                 0,329    0,197    0,446      0,329    0,378      0,144    0,576     0,424     APROVADO_POR_NOTA
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,658     0,036     DESISTENCIA
+                 0,144    0,027    0,486      0,144    0,222      0,202    0,625     0,269     REPROVADO
+                 0,130    0,007    0,655      0,130    0,218      0,267    0,655     0,222     REPROVADO_POR_MEDIA_E_POR_FALTAS
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,550     0,004     REPROVADO_POR_NOTA
+                 0,100    0,000    1,000      0,100    0,182      0,312    0,650     0,160     TRANCADO
+Weighted Avg.    0,448    0,312    0,477      0,448    0,399      0,177    0,613     0,394     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 951 228   0  16   3   0   0 |   a = APROVADO
+ 639 334   0  34   9   0   0 |   b = APROVADO_POR_NOTA
+  33  11   0   2   0   0   0 |   c = DESISTENCIA
+ 301  97   0  68   6   0   0 |   d = REPROVADO
+ 179  46   0  15  36   0   0 |   e = REPROVADO_POR_MEDIA_E_POR_FALTAS
+   9   3   0   0   0   0   0 |   f = REPROVADO_POR_NOTA
+  54  30   0   5   1   0  10 |   g = TRANCADO
+
