@@ -6,21 +6,21 @@ script temporário para tratar dados
 '''
 
 #seleção de dados do dataset
-def select_data(dataframe, column1, column2, column3):
-	#Seleção de dados onde registro em column_selected é igual a 'name'
-	dataframe[column1] = dataframe[column1].str.upper()
-	dataframe[column2] = dataframe[column2].str.upper()
-	dataframe[column3] = dataframe[column3].str.upper()
-
-	strings_to_repl = {'NOSSA SRA DA APRESENTAÇÃO' : 'NOSSA_SENHORA_DA_APRESENTACAO', 'S.G. AMARANTE' : 'SAO_GONCALO_DO_AMARANTE', 'CEARÁ - MIRIM' : 'CEARA_MIRIM', 'CEARA - MIRIM' : 'CEARA_MIRIM', 'Á' : 'A', 'Ã' : 'A', 'Â' : 'A', 'É' : 'E', 'Ẽ' : 'E', 'Ê' : 'E', 'Í' : 'I', 'Ĩ' : 'I', 'Î' : 'I', 'Ó': 'O', 'Õ' : 'O', 'Ô' : 'O', 'Ú' : 'U', 'Ũ' : 'U', 'Û' : 'U', 'Ç' : 'C', '-' : '_', ' ' : '_', '__' : '_', 'NSA._SENHORA_DA_APRESENTACAO' : 'NOSSA_SENHORA_DA_APRESENTACAO', '\'' : ''}
-
-	dataframe = dataframe.replace({column1 : strings_to_repl}, regex=True)
-
-	dataframe = dataframe.replace({column2 : strings_to_repl}, regex=True)
-
-	dataframe = dataframe.replace({column3 : strings_to_repl}, regex=True)
+def select_data(dataframe):
+	for i in range(2, len(dataframe.columns)):
 	
-	dataframe = dataframe[['id_discente', column1, column2, column3]]
+		#Seleção de dados onde registro em column_selected é igual a 'name'
+		dataframe[dataframe.columns[i]] = dataframe[dataframe.columns[i]].str.upper()
+		#dataframe[column2] = dataframe[column2].str.upper()
+		#dataframe[column3] = dataframe[column3].str.upper()
+
+		strings_to_repl = {'NOSSA SRA DA APRESENTAÇÃO' : 'NOSSA_SENHORA_DA_APRESENTACAO', 'S.G. AMARANTE' : 'SAO_GONCALO_DO_AMARANTE', 'CEARÁ - MIRIM' : 'CEARA_MIRIM', 'CEARA - MIRIM' : 'CEARA_MIRIM', 'Á' : 'A', 'Ã' : 'A', 'Â' : 'A', 'É' : 'E', 'Ẽ' : 'E', 'Ê' : 'E', 'Í' : 'I', 'Ĩ' : 'I', 'Î' : 'I', 'Ó': 'O', 'Õ' : 'O', 'Ô' : 'O', 'Ú' : 'U', 'Ũ' : 'U', 'Û' : 'U', 'Ç' : 'C', '-' : '_', ' ' : '_', '__' : '_', 'NSA._SENHORA_DA_APRESENTACAO' : 'NOSSA_SENHORA_DA_APRESENTACAO', '\'' : ''}
+
+		dataframe = dataframe.replace({dataframe.columns[i] : strings_to_repl}, regex=True)
+
+		#dataframe = dataframe.replace({column2 : strings_to_repl}, regex=True)
+
+		#dataframe = dataframe.replace({column3 : strings_to_repl}, regex=True)
 
 	return dataframe
 
@@ -35,11 +35,12 @@ semestre = args.semestre
 discentes = args.file
 
 discentes_df = pd.read_csv(discentes, sep=',')
+discentes_df = discentes_df.astype(str)
 
-result1_df = select_data(discentes_df, 'sexo', 'municipio', 'descricao')
-result2_df = select_data(discentes_df, 'raca', 'bairro', 'descricao')
-result3_df = select_data(discentes_df, 'municipio', 'cotista', 'descricao')
+discentes_df.drop('Unnamed: 0', axis=1, inplace=True)
 
-result1_df.to_csv("data/temp/sexo_mun_desc"+semestre+".csv", sep=';', index=False)
-result2_df.to_csv("data/temp/raca_bairro_desc"+semestre+".csv", sep=';', index=False)
-result3_df.to_csv("data/temp/mun_cot_desc"+semestre+".csv", sep=';', index=False)
+
+discentes_df = select_data(discentes_df)
+
+
+discentes_df.to_csv("data/temp/merge"+semestre+".csv", sep=';', index=False)
