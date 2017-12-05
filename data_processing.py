@@ -65,7 +65,7 @@ if args.file is not None:
 	#convertendo dados para string
 	matriculas_no_missing = matriculas_no_missing.astype(str)
 
-	matriculas_no_missing.to_csv("data/processed/matriculas_"+args.semestre+"_processed.csv")
+	#matriculas_no_missing.to_csv("data/processed/matriculas_"+args.semestre+"_processed.csv")
 
 else:
 	#leitura de arquivos
@@ -86,4 +86,4 @@ else:
 	df_no_missing['cep'] = df_no_missing['cep'].str.replace(' ', '')'''
 
 	
-	df_no_missing.to_csv("data/processed/dados_discentes_processed.csv")
+	#df_no_missing.to_csv("data/processed/dados_discentes_processed.csv")
