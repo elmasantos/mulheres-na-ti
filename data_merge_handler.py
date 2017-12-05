@@ -39,8 +39,12 @@ discentes_df = discentes_df.astype(str)
 
 discentes_df.drop('Unnamed: 0', axis=1, inplace=True)
 
-
 discentes_df = select_data(discentes_df)
 
-
 discentes_df.to_csv("data/temp/merge"+semestre+".csv", sep=';', index=False)
+
+#tabela sem repetições
+discentes2_df = discentes_df
+discentes2_df.drop_duplicates(subset='id_discente', keep='first', inplace=True)
+
+discentes2_df.to_csv("data/temp/merge"+semestre+"_sem_rep.csv", sep=';', index=False)
