@@ -55,7 +55,6 @@ def box_plot(df1, df2, column, semestre):
 
 def bar_plot(itens, semestre, title, output):
 	df = pd.DataFrame(itens, columns=['Mulheres', 'Homens'])
-	print(df)
 	plt.figure()
 	df.plot.bar()
 	plt.title(title +" - " + semestre[:4]+"."+semestre[4])
@@ -162,3 +161,21 @@ for i, dataframe in enumerate(dataframes):
 	raw_data = {'Mulheres' : faixa_salarial_mulheres, 'Homens' : faixa_salarial_homens}
 
 	bar_plot(raw_data, semestres[i], "Faixa salarial de mulheres e homens", "faixa_salarial")
+
+	####
+
+	pesquisa_mulheres = mulheres_df.groupby(["possui_bolsa_pesquisa"])['sexo'].count()
+	pesquisa_homens = homens_df.groupby(["possui_bolsa_pesquisa"])['sexo'].count()
+	raw_data = {'Mulheres' : pesquisa_mulheres, 'Homens' : pesquisa_homens}
+
+	bar_plot(raw_data, semestres[i], "Bolsa de pesquisa", "pesquisa")
+
+	####
+
+	alimentacao_mulheres = mulheres_df.groupby(["possui_auxilio_alimentacao"])['sexo'].count()
+	alimentacao_homens = homens_df.groupby(["possui_auxilio_alimentacao"])['sexo'].count()
+	raw_data = {'Mulheres' : alimentacao_mulheres, 'Homens' : alimentacao_homens}
+
+	bar_plot(raw_data, semestres[i], "Auxílio alimentação", "alimentacao")
+
+	
