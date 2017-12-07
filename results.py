@@ -53,13 +53,14 @@ def box_plot(df1, df2, column, semestre):
 	plt.close()
 
 
-def bar_plot(itens, semestre):
+def bar_plot(itens, semestre, title, output):
 	df = pd.DataFrame(itens, columns=['Mulheres', 'Homens'])
+	print(df)
 	plt.figure()
 	df.plot.bar()
-	plt.title("Status acadêmico de mulheres e homens - " + semestre[:4]+"."+semestre[4])
+	plt.title(title +" - " + semestre[:4]+"."+semestre[4])
 	plt.tight_layout() 
-	plt.savefig("data/resultados/plots/status"+semestre+".png")
+	plt.savefig("data/resultados/plots/"+output+semestre+".png")
 	plt.close()
 
 dataframes = []
@@ -111,14 +112,29 @@ for i, dataframe in enumerate(dataframes_completos):
 	box_plot(mulheres_df, homens_df, 'numero_total_faltas', semestres[i])
 
 
-for i, dataframe in enumerate(dataframes_completos):
+for i, dataframe in enumerate(dataframes):
 	# selecionar so os dados por sexo
 	mulheres_df = dataframe[dataframe.sexo == 'F']
 	homens_df = dataframe[dataframe.sexo == 'M']
 
 	status_mulheres = mulheres_df.groupby(["descricao"])['sexo'].count()
 	status_homens = homens_df.groupby(["descricao"])['sexo'].count()
-	lista_descricao = dataframe['descricao'].unique()
 	raw_data = {'Mulheres' : status_mulheres, 'Homens' : status_homens}
 
-	bar_plot(raw_data, semestres[i])
+	bar_plot(raw_data, semestres[i], "Status acadêmico de mulheres e homens", "status")
+
+	####
+
+	raca_mulheres = mulheres_df.groupby(["raca"])['sexo'].count()
+	raca_homens = homens_df.groupby(["raca"])['sexo'].count()
+	raw_data = {'Mulheres' : raca_mulheres, 'Homens' : raca_homens}
+
+	bar_plot(raw_data, semestres[i], "Raça de mulheres e homens", "raca")
+
+	####
+
+	formaIng_mulheres = mulheres_df.groupby(["forma_ingresso"])['sexo'].count()
+	formaIng_homens = homens_df.groupby(["forma_ingresso"])['sexo'].count()
+	raw_data = {'Mulheres' : formaIng_mulheres, 'Homens' : formaIng_homens}
+
+	bar_plot(raw_data, semestres[i], "Forma de ingresso de mulheres e homens", "forma_ingresso")
