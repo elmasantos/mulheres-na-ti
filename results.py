@@ -54,11 +54,10 @@ def box_plot(df1, df2, column, semestre):
 
 
 def bar_plot(itens, semestre):
-	df = pd.DataFrame(itens, columns=['Descricao', 'Mulheres', 'Homens'])
+	df = pd.DataFrame(itens, columns=['Mulheres', 'Homens'])
 	plt.figure()
-	plt.xlabel('Status acadêmico')
-	plt.ylabel('Quantidade')
-	df.plot.bar(x='Descricao')
+	df.plot.bar()
+	plt.title("Status acadêmico de mulheres e homens - " + semestre[:4]+"."+semestre[4])
 	plt.tight_layout() 
 	plt.savefig("data/resultados/plots/status"+semestre+".png")
 	plt.close()
@@ -119,8 +118,7 @@ for i, dataframe in enumerate(dataframes_completos):
 
 	status_mulheres = mulheres_df.groupby(["descricao"])['sexo'].count()
 	status_homens = homens_df.groupby(["descricao"])['sexo'].count()
-
 	lista_descricao = dataframe['descricao'].unique()
-	raw_data = {'Descricao' : lista_descricao, 'Mulheres' : status_mulheres, 'Homens' : status_homens}
+	raw_data = {'Mulheres' : status_mulheres, 'Homens' : status_homens}
 
 	bar_plot(raw_data, semestres[i])
