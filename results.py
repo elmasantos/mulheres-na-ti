@@ -144,7 +144,7 @@ for i, dataframe in enumerate(dataframes):
 	cotista_homens = homens_df.groupby(["cotista"])['sexo'].count()
 	raw_data = {'Mulheres' : cotista_mulheres, 'Homens' : cotista_homens}
 
-	bar_plot(raw_data, semestres[i], "Mulheres e homens cotistas", "cotista")
+	bar_plot(raw_data, semestres[i], "Cotas", "cotista")
 
 	####
 
@@ -178,4 +178,11 @@ for i, dataframe in enumerate(dataframes):
 
 	bar_plot(raw_data, semestres[i], "Auxílio alimentação", "alimentacao")
 
-	
+	####
+
+	transporte_mulheres = mulheres_df.groupby(["possui_auxilio_transporte"])['sexo'].count()
+	transporte_homens = homens_df.groupby(["possui_auxilio_transporte"])['sexo'].count()
+	raw_data = {'Mulheres' : transporte_mulheres, 'Homens' : transporte_homens}
+
+	bar_plot(raw_data, semestres[i], "Auxílio transporte", "transporte")
+
