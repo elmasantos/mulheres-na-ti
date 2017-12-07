@@ -146,3 +146,11 @@ for i, dataframe in enumerate(dataframes):
 	raw_data = {'Mulheres' : cotista_mulheres, 'Homens' : cotista_homens}
 
 	bar_plot(raw_data, semestres[i], "Mulheres e homens cotistas", "cotista")
+
+	####
+
+	faixa_etaria_mulheres = mulheres_df.groupby(["faixa_etaria"])['sexo'].count()
+	faixa_etaria_homens = homens_df.groupby(["faixa_etaria"])['sexo'].count()
+	raw_data = {'Mulheres' : faixa_etaria_mulheres, 'Homens' : faixa_etaria_homens}
+
+	bar_plot(raw_data, semestres[i], "Faixa etária de mulheres e homens", "faixa_etaria")
