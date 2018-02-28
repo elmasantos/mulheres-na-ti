@@ -1,4 +1,4 @@
-# mulheres-na-ti
+# Mulheres na TI
 
 Em razão do baixo número de mulheres na área de tecnologia da informação, decidimos levantar dados a fim de compreender essa realidade. O nosso objetivo é analisar os fatores que levam à evasão de mulheres que ingressam no curso do BTI-UFRN. 
 O projeto está sendo desenvolvido para a disciplina Tópicos Especiais em Informática Educacional "C".
