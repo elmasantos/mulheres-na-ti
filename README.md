@@ -41,12 +41,21 @@ Merge entre a base “discentes da instituição” e as demais bases “matríc
   - Preenchimento de campos vazios por texto 'NAO INFORMADO' nas colunas 'cidade_origem', 'estado', 'municipio' e 'bairro'.
 
 
+#### Rodando scripts
+
+Para rodar o script de merge, é preciso passar um arquivo CSV de matrículas de determinado semestre e o semestre em questão.
+
+Exemplo:
+
+```shell
+python3.5 merge_pessoais_matriculas.py -m data/matricula-componente-20141.csv -s 20141
+
+```
+
 #### Autores
 
 * [Elma](https://github.com/elmasantos/)
-* Joicy
-* [Julliana](https://github.com/JuhCrln)
-* Gabriel
+* [Joicy](https://github.com/joicyoliv)
 * [Thayrone](https://github.com/thaydds)
 
 
