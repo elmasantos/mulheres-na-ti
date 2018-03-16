@@ -29,15 +29,23 @@ matriculas_no_missing = data_handler.select_data(matriculas_df, 'discente', 'id_
 #merge entre dataframes dados-pessoais-discentes e matricula
 merge = pd.merge(dados_pessoais_df, matriculas_no_missing, how='inner', left_on='id_discente', right_on='discente')
 
-#deleta coluna "discente" (porque já existe 'id_discente')
-merge.drop(['discente'], axis=1, inplace=True)
+#deleta colunas desnecessarias
+data_handler.drop_columns(merge, 'discente', 'id_turma', 'unidade', 'nota', 'reposicao', 'media_final', 'faltas_unidade', 'numero_total_faltas', 'descricao')
 
 #deleta registros com o mesmo 'id_discente', exceto a primeira ocorrência
 merge.drop_duplicates(subset='id_discente', keep='first', inplace=True)
+
 #seleciona registros do ano de ingresso escolhido
 merge = merge[merge['ano_ingresso'] == int(semestre)]
+
 #seleciona registros do periodo de ingresso escolhido
 merge = merge[merge['periodo_ingresso'] == int(periodo)]
+
+#preenche campos vazios
+#merge = data_handler.fill_empty_fields(merge)
+
+#padroniza nomes de bairros
+merge = data_handler.replace_to_standardize(merge)
 
 #apenas para chegar quantidade de registros nulos em cada coluna
 print(merge.isnull().sum())

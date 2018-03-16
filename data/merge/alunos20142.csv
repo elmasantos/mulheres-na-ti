@@ -1,4 +1,4 @@
-,id_discente,sexo,data_nascimento,raca,estado_origem,cidade_origem,estado,municipio,bairro,nivel_ensino,forma_ingresso,ano_ingresso,periodo_ingresso,cotista,id_turma,id_curso,unidade,nota,reposicao,faltas_unidade,media_final,numero_total_faltas,descricao
-7096,aeb853ba3fbf72a9ceca3f5157e3fcf3,M,19-04-1993,Pardo,Rio Grande do Norte,NATAL,Rio Grande do Norte,NATAL,NOVA CIDADE,GRADUAÇÃO,VESTIBULAR,2014,2.0,f,1236796,92127264.0,1.0,7.7,f,0.0,7.2,0.0,APROVADO
-7122,63a082d54912829c3791dde3e907f3ff,M,26-01-1993,Branco,Rio Grande do Norte,FRUTUOSO GOMES,Rio Grande do Norte,NATAL,NEÓPOLIS,GRADUAÇÃO,VESTIBULAR,2014,2.0,f,1228399,92127264.0,2.0,9.7,f,0.0,9.1,0.0,APROVADO
-7134,ab6ebb084c9eb8a5889596424523e77d,M,22-09-1986,Branco,Rio Grande do Norte,NATAL,Rio Grande do Norte,NATAL,PITIMBÚ,GRADUAÇÃO,VESTIBULAR,2014,2.0,f,1228399,92127264.0,1.0,9.3,f,0.0,9.2,0.0,APROVADO
+,id_discente,sexo,data_nascimento,raca,estado_origem,cidade_origem,estado,municipio,bairro,nivel_ensino,forma_ingresso,ano_ingresso,periodo_ingresso,cotista,id_curso
+7096,aeb853ba3fbf72a9ceca3f5157e3fcf3,M,19_04_1993,PARDO,RIO_GRANDE_DO_NORTE,NATAL,RIO_GRANDE_DO_NORTE,NATAL,NOVA_CIDADE,GRADUACAO,VESTIBULAR,2014,2.0,F,92127264.0
+7122,63a082d54912829c3791dde3e907f3ff,M,26_01_1993,BRANCO,RIO_GRANDE_DO_NORTE,FRUTUOSO_GOMES,RIO_GRANDE_DO_NORTE,NATAL,NEOPOLIS,GRADUACAO,VESTIBULAR,2014,2.0,F,92127264.0
+7134,ab6ebb084c9eb8a5889596424523e77d,M,22_09_1986,BRANCO,RIO_GRANDE_DO_NORTE,NATAL,RIO_GRANDE_DO_NORTE,NATAL,PITIMBU,GRADUACAO,VESTIBULAR,2014,2.0,F,92127264.0
