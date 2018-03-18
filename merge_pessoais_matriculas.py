@@ -48,7 +48,7 @@ merge = data_handler.fill_empty_fields(merge)
 merge = data_handler.replace_to_standardize(merge)
 
 #apenas para chegar quantidade de registros nulos em cada coluna
-print(merge['forma_ingresso'].value_counts())
+print(merge['periodo_ingresso'].value_counts())
 print(merge.isnull().sum())
 
 #dataframe com o merge final
