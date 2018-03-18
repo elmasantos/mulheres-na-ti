@@ -1,4 +1,4 @@
-#!/usr/bin/python                                                                        
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 import pandas as pd
@@ -42,14 +42,15 @@ merge = merge[merge['ano_ingresso'] == int(semestre)]
 merge = merge[merge['periodo_ingresso'] == int(periodo)]
 
 #preenche campos vazios
-#merge = data_handler.fill_empty_fields(merge)
+merge = data_handler.fill_empty_fields(merge)
 
 #padroniza nomes de bairros
 merge = data_handler.replace_to_standardize(merge)
 
 #apenas para chegar quantidade de registros nulos em cada coluna
+print(merge['forma_ingresso'].value_counts())
 print(merge.isnull().sum())
 
-#sala dataframe com o merge final
+#dataframe com o merge final
 merge.to_csv("data/merge/alunos" + args.semestre + ".csv")
 
