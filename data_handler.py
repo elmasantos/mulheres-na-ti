@@ -1,4 +1,4 @@
-#!/usr/bin/python                                                                        
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pandas as pd
 
@@ -21,8 +21,8 @@ def drop_columns(dataframe, *columns):
 
 #preenche campos vazios
 def fill_empty_fields(dataframe):
-    values = {'estado_origem' : 'NAO INFORMADO', 'cidade_origem' : 'NAO INFORMADO',
-    'estado' : 'NAO INFORMADO', 'municipio' : 'NAO INFORMADO', 'bairro' : 'NAO INFORMADO'}
+    values = {'estado_origem' : 'NAO_INFORMADO', 'cidade_origem' : 'NAO_INFORMADO',
+    'estado' : 'NAO_INFORMADO', 'municipio' : 'NAO_INFORMADO', 'bairro' : 'NAO_INFORMADO'}
     dataframe.fillna(value=values, inplace=True)
 
     return dataframe
@@ -33,10 +33,10 @@ def replace_to_standardize(dataframe):
     dataframe = dataframe.astype(str)
 
     for i in range(2, len(dataframe.columns)):
-    
+
         #Seleção de dados onde registro em column_selected é igual a 'name'
         dataframe[dataframe.columns[i]] = dataframe[dataframe.columns[i]].str.upper()
-        
+
         strings_to_repl = {',' : '', 'NOSSA SRA DA APRESENTAÇÃO' : 'NOSSA_SENHORA_DA_APRESENTACAO', 'S.G. AMARANTE' : 'SAO_GONCALO_DO_AMARANTE', 'CEARÁ - MIRIM' : 'CEARA_MIRIM', 'CEARA - MIRIM' : 'CEARA_MIRIM', 'Á' : 'A', 'Ã' : 'A', 'Â' : 'A', 'É' : 'E', 'Ẽ' : 'E', 'Ê' : 'E', 'Í' : 'I', 'Ĩ' : 'I', 'Î' : 'I', 'Ó': 'O', 'Õ' : 'O', 'Ô' : 'O', 'Ú' : 'U', 'Ũ' : 'U', 'Û' : 'U', 'Ç' : 'C', '-' : '_', ' ' : '_', '__' : '_', 'NSA._SENHORA_DA_APRESENTACAO' : 'NOSSA_SENHORA_DA_APRESENTACAO', '\'' : ''}
 
         dataframe = dataframe.replace({dataframe.columns[i] : strings_to_repl}, regex=True)
