@@ -1,17 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import matplotlib.pyplot as plt
 import pandas as pd
 import argparse
 import numpy as np
+import reports_functions
 
-#gera CSV de quantidade de alunos por semestre
-def generate_amount_csv(itens):
-    df = pd.DataFrame(itens, columns=['Semestre', 'Quantidade de alunos', 'Homens', 'Mulheres'])
-    df.to_csv("data/reports/quantidade_de_alunos.csv")
-
-
+#variaveis
 semestres = ['20131', '20132', '20141', '20142', '20151', '20152', '20161', '20162', '20171']
 dataframes = []
 periodo = []
@@ -19,6 +14,8 @@ homens = []
 quantidade = []
 mulheres = []
 bairros = []
+cotistas_mulheres = []
+cotistas_homens = []
 
 #lendo dataframes
 for sem in semestres:
@@ -32,7 +29,19 @@ for i, dataframe in enumerate(dataframes):
     homens.append(len(dataframe[dataframe.sexo == 'M']))
     mulheres.append(len(dataframe[dataframe.sexo == 'F']))
 
+    #separando dataframes por sexo
+    mulheres_df = dataframe[dataframe.sexo == 'F']
+    homens_df = dataframe[dataframe.sexo == 'M']
 
+    cotistas_mulheres.append(len(mulheres_df[mulheres_df['cotista'] == 'T']))
+    cotistas_homens.append(len(homens_df[homens_df['cotista'] == 'T']))
+
+#relatorio cotistas
+raw_data = {'Semestre' : periodo, 'Homens cotistas' : cotistas_homens, 'Mulheres cotistas' : cotistas_mulheres}
+
+reports_functions.generate_cotistas_csv(raw_data)
+
+#relatorio quantidades
 raw_data = {'Semestre' : periodo, 'Quantidade de alunos' : quantidade, 'Homens' : homens, 'Mulheres' : mulheres}
 
-generate_amount_csv(raw_data)
+reports_functions.generate_amount_csv(raw_data)
