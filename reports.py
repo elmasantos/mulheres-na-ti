@@ -15,7 +15,8 @@ quantidade = []
 mulheres = []
 cotistas_mulheres = []
 cotistas_homens = []
-bairros_grouped = []
+zonas_grouped = []
+
 #lendo dataframes
 for sem in semestres:
     dataframe = pd.read_csv("data/merge/alunos"+sem+".csv", sep=',')
@@ -37,8 +38,24 @@ for i, dataframe in enumerate(dataframes):
 
     reports_functions.generate_bairro_mulheres(mulheres_df, semestres[i][:4]+"."+semestres[i][4])
 
+    #adiciona coluna de zonas
     dataframe['zona'] = dataframe.apply(lambda row: reports_functions.zonas_natal(row), axis=1)
+    #gera relatorios de zonas por semestre
     reports_functions.generate_zonas_mulheres(dataframe[dataframe.sexo == 'F'], semestres[i][:4]+"."+semestres[i][4])
+
+#gera lista de dataframes de zonas
+for dataframe in dataframes:
+    dataframe = dataframe[dataframe.sexo == 'F']
+    #zonas_grouped.append(dataframe.groupby(['zona', 'sexo']).count())
+    zonas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "zona"] ).size()}).reset_index())
+
+#gera dataframe com total de zonas
+zonas = pd.concat(zonas_grouped)
+zonas['Total'] = zonas.groupby(['zona'])['quantidade'].transform('sum')
+zonas.drop_duplicates(subset='zona', keep='first', inplace=True)
+zonas.drop(['quantidade'], axis=1, inplace=True)
+reports_functions.generate_total_zonas_mulheres(zonas)
+#relatorio de total de zonas
 
 
 #relatorio cotistas
@@ -52,7 +69,6 @@ raw_data = {'Semestre' : periodo, 'Quantidade de alunos' : quantidade, 'Homens' 
 #reports_functions.generate_amount_csv(raw_data)
 
 #relatorio bairros
-
 #raw_data = {'Bairro' : bairros, 'Quantidade de mulheres' : mulheres}
 
 #reports_functions.generate_bairros_csv(raw_data)
