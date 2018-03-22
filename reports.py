@@ -37,8 +37,8 @@ for i, dataframe in enumerate(dataframes):
 
     reports_functions.generate_bairro_mulheres(mulheres_df, semestres[i][:4]+"."+semestres[i][4])
 
-    mulheres_df['zona'] = mulheres_df.apply(lambda row: reports_functions.zonas_natal(row), axis=1)
-    reports_functions.generate_zonas_mulheres(mulheres_df, semestres[i][:4]+"."+semestres[i][4])
+    dataframe['zona'] = dataframe.apply(lambda row: reports_functions.zonas_natal(row), axis=1)
+    reports_functions.generate_zonas_mulheres(dataframe[dataframe.sexo == 'F'], semestres[i][:4]+"."+semestres[i][4])
 
 
 #relatorio cotistas

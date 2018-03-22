@@ -20,7 +20,7 @@ def generate_bairro_mulheres(dataframe, semestre):
 def generate_zonas_mulheres(dataframe, semestre):
     grouped = dataframe.groupby(['zona'])['sexo'].count()
     df = pd.DataFrame(grouped)
-    df.to_csv("data/reports/bairros/alunas_zonas"+semestre+".csv")
+    df.to_csv("data/reports/zonas/alunas_zonas"+semestre+".csv")
 
 def generate_cotistas_bairros_por_ano_csv(itens, ano):
     df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres cotistas'])
@@ -41,7 +41,7 @@ def zonas_natal(row):
     if row['bairro'] in leste:
         return 'ZONA_LESTE'
     elif row['bairro'] in norte:
-        return 'ZONA_NOTE'
+        return 'ZONA_NORTE'
     elif row['bairro'] in oeste:
         return 'ZONA_OESTE'
     elif row['bairro'] in sul:
