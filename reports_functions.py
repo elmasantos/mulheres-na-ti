@@ -30,6 +30,11 @@ def generate_total_zonas_mulheres(dataframe):
     df = pd.DataFrame(dataframe)
     df.to_csv("data/reports/zonas/alunas_total_zonas.csv")
 
+
+def generate_total_racas_mulheres(dataframe):
+    df = pd.DataFrame(dataframe)
+    df.to_csv("data/reports/racas/alunas_total_racas.csv")    
+
 #def generate_cotistas_bairros_por_ano_csv(itens, ano):
 #    df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres cotistas'])
 #    df.to_csv("data/reports/"+ano+"_alunas_cotistas_por_bairros.csv")
