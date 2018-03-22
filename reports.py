@@ -17,6 +17,7 @@ cotistas_mulheres = []
 cotistas_homens = []
 zonas_grouped = []
 racas_grouped = []
+cotistas_grouped = []
 
 #lendo dataframes
 for sem in semestres:
@@ -50,14 +51,25 @@ for dataframe in dataframes:
     #zonas_grouped.append(dataframe.groupby(['zona', 'sexo']).count())
     zonas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "zona"] ).size()}).reset_index())
     racas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "raca"] ).size()}).reset_index())
+    cotistas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "cotista"] ).size()}).reset_index())
+
 #gera dataframe com total de zonas
 racas = pd.concat(racas_grouped)
 racas['Total'] = racas.groupby(['raca'])['quantidade'].transform('sum')
 racas.drop_duplicates(subset='raca', keep='first', inplace=True)
 racas.drop(['quantidade'], axis=1, inplace=True)
 
-#relatorio de total de zonas
+#relatorio de total de raças
 reports_functions.generate_total_racas_mulheres(racas)
+
+#gera dataframe com total de cotistas
+cotistas = pd.concat(cotistas_grouped)
+cotistas['Total'] = cotistas.groupby(['cotista'])['quantidade'].transform('sum')
+cotistas.drop_duplicates(subset='cotista', keep='first', inplace=True)
+cotistas.drop(['quantidade'], axis=1, inplace=True)
+
+#relatorio de total de cotistas
+reports_functions.generate_mulheres_cotistas_csv(cotistas)
 
 #gera dataframe com total de zonas
 zonas = pd.concat(zonas_grouped)
