@@ -16,6 +16,11 @@ def generate_bairros_csv(itens):
     df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres'])
     df.to_csv("data/reports/alunas_bairros.csv")
 
+def generate_bairro_mulheres(dataframe, semestre):
+    grouped = dataframe.groupby(['bairro'])['sexo'].count()
+    df = pd.DataFrame(grouped)
+    df.to_csv("data/reports/bairros/alunas_bairros"+semestre+".csv")
+
 def generate_cotistas_bairros_por_ano_csv(itens, ano):
     df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres cotistas'])
     df.to_csv("data/reports/"+ano+"_alunas_cotistas_por_bairros.csv")
