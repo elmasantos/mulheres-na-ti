@@ -13,7 +13,7 @@ def generate_cotistas_csv(itens):
     df.to_csv("data/reports/alunos_cotistas.csv")
 
 def generate_mulheres_cotistas_csv(itens):
-    df = pd.DataFrame(itens, columns=['Semestre', 'Mulheres cotistas', 'Mulheres não cotistas'])
+    df = pd.DataFrame(itens, columns=['cotista', 'Total'])
     df.to_csv("data/reports/mulheres_cotistas_e_nao_cotistas.csv")
 
 def generate_bairro_mulheres(dataframe, semestre):
@@ -29,10 +29,6 @@ def generate_zonas_mulheres(dataframe, semestre):
 def generate_total_zonas_mulheres(dataframe):
     df = pd.DataFrame(dataframe)
     df.to_csv("data/reports/zonas/alunas_total_zonas.csv")
-
-#def generate_cotistas_bairros_por_ano_csv(itens, ano):
-#    df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres cotistas'])
-#    df.to_csv("data/reports/"+ano+"_alunas_cotistas_por_bairros.csv")
 
 def generate_racas_csv(itens):
     df = pd.DataFrame(itens, columns=['Raças', 'Quantidade de Mulheres'])

@@ -16,7 +16,7 @@ mulheres = []
 cotistas_mulheres = []
 cotistas_homens = []
 zonas_grouped = []
-
+cotistas_grouped = []
 #lendo dataframes
 for sem in semestres:
     dataframe = pd.read_csv("data/merge/alunos"+sem+".csv", sep=',')
@@ -48,6 +48,17 @@ for dataframe in dataframes:
     dataframe = dataframe[dataframe.sexo == 'F']
     #zonas_grouped.append(dataframe.groupby(['zona', 'sexo']).count())
     zonas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "zona"] ).size()}).reset_index())
+    cotistas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "cotista"] ).size()}).reset_index())
+
+
+#gera dataframe com total de cotistas
+cotistas = pd.concat(cotistas_grouped)
+cotistas['Total'] = cotistas.groupby(['cotista'])['quantidade'].transform('sum')
+cotistas.drop_duplicates(subset='cotista', keep='first', inplace=True)
+cotistas.drop(['quantidade'], axis=1, inplace=True)
+
+#relatorio de total de cotistas
+reports_functions.generate_mulheres_cotistas_csv(cotistas)
 
 #gera dataframe com total de zonas
 zonas = pd.concat(zonas_grouped)
