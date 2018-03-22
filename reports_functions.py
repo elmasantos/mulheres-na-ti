@@ -12,14 +12,15 @@ def generate_cotistas_csv(itens):
     df = pd.DataFrame(itens, columns=['Semestre', 'Homens cotistas', 'Mulheres cotistas'])
     df.to_csv("data/reports/alunos_cotistas.csv")
 
-def generate_bairros_csv(itens):
-    df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres'])
-    df.to_csv("data/reports/alunas_bairros.csv")
-
 def generate_bairro_mulheres(dataframe, semestre):
     grouped = dataframe.groupby(['bairro'])['sexo'].count()
     df = pd.DataFrame(grouped)
     df.to_csv("data/reports/bairros/alunas_bairros"+semestre+".csv")
+
+def generate_zonas_mulheres(dataframe, semestre):
+    grouped = dataframe.groupby(['zona'])['sexo'].count()
+    df = pd.DataFrame(grouped)
+    df.to_csv("data/reports/bairros/alunas_zonas"+semestre+".csv")
 
 def generate_cotistas_bairros_por_ano_csv(itens, ano):
     df = pd.DataFrame(itens, columns=['Bairro', 'Quantidade de mulheres cotistas'])
@@ -28,3 +29,22 @@ def generate_cotistas_bairros_por_ano_csv(itens, ano):
 def generate_racas_csv(itens):
     df = pd.DataFrame(itens, columns=['Raças', 'Quantidade de Mulheres'])
     df.to_csv("data/reports/racas_alunas.csv")
+
+
+
+def zonas_natal(row):
+    leste = ['SANTOS_REIS', 'ROCAS', 'RIBEIRA', 'PRAIA_DO_MEIO', 'CIDADE_ALTA', 'PETROPOLIS', 'AREIA_PRETA', 'MAE_LUÍZA', 'ALECRIM', 'BARRO_VERMELHO', 'TIROL', 'LAGOA_SECA']
+    norte = ['LAGOA_AZUL', 'PAJUCARA', 'POTENGI', 'REDINHA', 'NOSSA_SENHORA_DA_APRESENTACAO', 'IGAPO', 'SALINAS']
+    oeste = ['FELIPE_CAMARAO', 'CIDADE_DA_ESPERANCA', 'PLANALTO', 'CIDADE_NOVA', 'GUARAPES', 'QUINTAS', 'NORDESTE', 'DIX_SEPT_ROSADO', 'BOM_PASTOR' , 'NOSSA_SENHORA_DE_NAZARE']
+    sul = ['NEOPOLIS', 'PONTA_NEGRA', 'NOVA_DESCOBERTA', 'LAGOA_NOVA','CANDELARIA', 'CAPIM_MACIO', 'PITIMBU']
+
+    if row['bairro'] in leste:
+        return 'ZONA_LESTE'
+    elif row['bairro'] in norte:
+        return 'ZONA_NOTE'
+    elif row['bairro'] in oeste:
+        return 'ZONA_OESTE'
+    elif row['bairro'] in sul:
+        return 'ZONA_SUL'
+    else:
+        return 'NAO_INFORMADO'
