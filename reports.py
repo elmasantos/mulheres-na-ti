@@ -54,21 +54,16 @@ zonas = pd.concat(zonas_grouped)
 zonas['Total'] = zonas.groupby(['zona'])['quantidade'].transform('sum')
 zonas.drop_duplicates(subset='zona', keep='first', inplace=True)
 zonas.drop(['quantidade'], axis=1, inplace=True)
-reports_functions.generate_total_zonas_mulheres(zonas)
-#relatorio de total de zonas
 
+#relatorio de total de zonas
+reports_functions.generate_total_zonas_mulheres(zonas)
 
 #relatorio cotistas
 raw_data = {'Semestre' : periodo, 'Homens cotistas' : cotistas_homens, 'Mulheres cotistas' : cotistas_mulheres}
 
-#reports_functions.generate_cotistas_csv(raw_data)
+reports_functions.generate_cotistas_csv(raw_data)
 
 #relatorio quantidades
 raw_data = {'Semestre' : periodo, 'Quantidade de alunos' : quantidade, 'Homens' : homens, 'Mulheres' : mulheres}
 
-#reports_functions.generate_amount_csv(raw_data)
-
-#relatorio bairros
-#raw_data = {'Bairro' : bairros, 'Quantidade de mulheres' : mulheres}
-
-#reports_functions.generate_bairros_csv(raw_data)
+reports_functions.generate_amount_csv(raw_data)
