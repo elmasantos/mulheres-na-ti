@@ -34,6 +34,23 @@ def generate_total_racas_mulheres(dataframe):
     df = pd.DataFrame(dataframe)
     df.to_csv("data/reports/racas/alunas_total_racas.csv")
 
+#gera lista de dataframes de acordo com coluna desejada
+def generate_list_of_dataframes(dataframes, column):
+    data_grouped = []
+    for dataframe in dataframes:
+        dataframe = dataframe[dataframe.sexo == 'F']
+
+        data_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ column] ).size()}).reset_index())
+
+    return data_grouped
+
+def generate_total_dataframe(data_grouped, column):
+    data_total = pd.concat(data_grouped)
+    data_total['Total'] = data_total.groupby([column])['quantidade'].transform('sum')
+    data_total.drop_duplicates(subset=column, keep='first', inplace=True)
+    data_total.drop(['quantidade'], axis=1, inplace=True)
+    return data_total
+
 def zonas_natal(row):
     leste = ['SANTOS_REIS', 'ROCAS', 'RIBEIRA', 'PRAIA_DO_MEIO', 'CIDADE_ALTA', 'PETROPOLIS', 'AREIA_PRETA', 'MAE_LUÍZA', 'ALECRIM', 'BARRO_VERMELHO', 'TIROL', 'LAGOA_SECA']
     norte = ['LAGOA_AZUL', 'PAJUCARA', 'POTENGI', 'REDINHA', 'NOSSA_SENHORA_DA_APRESENTACAO', 'IGAPO', 'SALINAS']

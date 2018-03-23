@@ -35,49 +35,37 @@ for i, dataframe in enumerate(dataframes):
     mulheres_df = dataframe[dataframe.sexo == 'F']
     homens_df = dataframe[dataframe.sexo == 'M']
 
+    #coletando quantidade de cotistas por sexo
     cotistas_mulheres.append(len(mulheres_df[mulheres_df['cotista'] == 'T']))
     cotistas_homens.append(len(homens_df[homens_df['cotista'] == 'T']))
 
+    #gera relatorio de bairros das mulheres ingressantes por semestre
     reports_functions.generate_bairro_mulheres(mulheres_df, semestres[i][:4]+"."+semestres[i][4])
 
     #adiciona coluna de zonas
     dataframe['zona'] = dataframe.apply(lambda row: reports_functions.zonas_natal(row), axis=1)
-    #gera relatorios de zonas por semestre
+
+    #gera relatorios de zonas das mulheres ingressantes por semestre
     reports_functions.generate_zonas_mulheres(dataframe[dataframe.sexo == 'F'], semestres[i][:4]+"."+semestres[i][4])
 
-#gera lista de dataframes de zonas
-for dataframe in dataframes:
-    dataframe = dataframe[dataframe.sexo == 'F']
-    #zonas_grouped.append(dataframe.groupby(['zona', 'sexo']).count())
-    zonas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "zona"] ).size()}).reset_index())
-    racas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "raca"] ).size()}).reset_index())
-    cotistas_grouped.append(pd.DataFrame({'quantidade' : dataframe.groupby( [ "cotista"] ).size()}).reset_index())
+#gera lista de dataframes desejados
+zonas_grouped = reports_functions.generate_list_of_dataframes(dataframes, 'zona')
+racas_grouped = reports_functions.generate_list_of_dataframes(dataframes, 'raca')
+cotistas_grouped = reports_functions.generate_list_of_dataframes(dataframes, 'cotista')
+
 
 #gera dataframe com total de zonas
-racas = pd.concat(racas_grouped)
-racas['Total'] = racas.groupby(['raca'])['quantidade'].transform('sum')
-racas.drop_duplicates(subset='raca', keep='first', inplace=True)
-racas.drop(['quantidade'], axis=1, inplace=True)
-
+racas = reports_functions.generate_total_dataframe(racas_grouped, 'raca')
 #relatorio de total de raças
 reports_functions.generate_total_racas_mulheres(racas)
 
 #gera dataframe com total de cotistas
-cotistas = pd.concat(cotistas_grouped)
-cotistas['Total'] = cotistas.groupby(['cotista'])['quantidade'].transform('sum')
-cotistas.drop_duplicates(subset='cotista', keep='first', inplace=True)
-cotistas.drop(['quantidade'], axis=1, inplace=True)
-
+cotistas = reports_functions.generate_total_dataframe(cotistas_grouped, 'cotista')
 #relatorio de total de cotistas
 reports_functions.generate_mulheres_cotistas_csv(cotistas)
 
 #gera dataframe com total de zonas
-zonas = pd.concat(zonas_grouped)
-zonas['Total'] = zonas.groupby(['zona'])['quantidade'].transform('sum')
-zonas.drop_duplicates(subset='zona', keep='first', inplace=True)
-zonas.drop(['quantidade'], axis=1, inplace=True)
-
-
+zonas = reports_functions.generate_total_dataframe(zonas_grouped, 'zona')
 #relatorio de total de zonas
 reports_functions.generate_total_zonas_mulheres(zonas)
 
