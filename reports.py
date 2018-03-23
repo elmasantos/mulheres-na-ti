@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd
-import argparse
-import numpy as np
 import reports_functions
 
 #variaveis
@@ -15,9 +13,6 @@ quantidade = []
 mulheres = []
 cotistas_mulheres = []
 cotistas_homens = []
-zonas_grouped = []
-racas_grouped = []
-cotistas_grouped = []
 
 #lendo dataframes
 for sem in semestres:
